@@ -1,0 +1,42 @@
+package abc;
+import java.util.*;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Welcome to number Guessing Game");
+		System.out.println("Guess any number from 1 to 100");
+		Scanner sc=new Scanner(System.in);
+		int t=0,c=0,p=0;
+		do {
+			System.out.println("Guess any number");
+			int a=sc.nextInt();
+			double f=Math.random()*100;
+			int d=(int)f;
+			
+			if(a==d) {
+				p++;
+				System.out.println("Your guess is true");
+				
+			}else {
+				System.out.println("Sorry! Your guess is wrong");
+				System.out.println("Actual Number is: "+d);
+			}
+			c++;
+			if(c==10) {
+				break;
+			}
+			System.out.println("Do you want to play more \n1.Yes \n2. No");
+			t=sc.nextInt();
+			
+		}while(t!=2);
+		
+		System.out.println("total attempt : "+c);
+		System.out.println("correct attempt : "+p);
+		System.out.println("Success rate : "+p/c *100);
+		System.out.println("Thank you");
+		return;
+	}
+
+}
